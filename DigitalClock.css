@@ -75,6 +75,7 @@ body {
 	border-radius: 10px;
 	padding: 15px;
 	color: #3d087b;
+	font-family: Manrope, san-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -89,8 +90,10 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-family: Manrope, san-serif;
 }
 .schedule .form-input h2 {
+	font-family: Manrope, san-serif;
 	font-weight: normal;
 	font-size: 16px;
 	/* margin: 0 30px 0 10px; */
@@ -101,6 +104,9 @@ body {
 	border: 1px solid #ededed;
 	padding: 8px;
 	justify-self: end;
+}
+.form-input select option {
+	padding: 5px 10px;
 }
 #greeting {
 	margin-top: 0.7rem;
@@ -113,6 +119,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-family: Bauhaus Hv BT;
+	font-family: "Paytone One", sans-serif;
 	font-size: 20px;
 	line-height: 30px;
 	font-weight: 900;
@@ -156,20 +163,24 @@ body {
 	font-size: 0;
 }
 .time-table {
-	width: 150px;
-	padding: 5px;
+	width: 220px;
+	padding: 10px;
 	/* background: var(--clr-2); */
-	background: var(--clr-8);
+	/* background: var(--clr-16); */
+	background: var(--clr-5);
 	border-radius: 8px;
 	/* border: 1px solid #ededed; */
 	border-radius: 10px;
-	/* opacity: 0.23; */
 }
 .time-table small {
-	font-size: 10px;
 	color: var(--clr-12);
 	color: var(--clr-2);
-	opacity: 1;
+	color: var(--clr-17);
+	margin: 3px 0;
+	padding: 10px;
+	font-family: "Inter", sans-serif;
+	font-size: 13px;
+	line-height: 1em;
 }
 /* =========================================================== */
 /* right side all  */
@@ -181,6 +192,7 @@ body {
 	width: 100%;
 	height: 120px;
 	background-color: #ffffff;
+	font-family: "Inter", sans-serif;
 	color: #3d087b;
 	font-weight: normal;
 	padding: 10px;
@@ -193,8 +205,10 @@ body {
 	justify-content: space-around;
 	margin-left: 20px;
 	margin-right: 12px;
+	font-family: "Inter", sans-serif;
 }
 .actual-time > div {
+	font-family: "Inter", sans-serif;
 	position: relative;
 	margin: 0 3px;
 }
@@ -234,16 +248,17 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: Bauhaus Hv BT;
+	font-family: "Inter", sans-serif;
+	line-height: 0.7em;
 	font-size: 22px;
-	line-height: 32px;
 	font-weight: 900;
 	border-radius: 10px;
 }
 #wallpaper {
 	margin-top: 1rem;
-	width: 100%;
-	height: 250px;
+	height: 320px;
+	aspect-ratio: 1.7/1;
+	max-width: 100%;
 	border-radius: 10px;
 	background-image: url("assets/Group_5183-1.svg");
 	/* background-position: -60px -100px; */

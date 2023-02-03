@@ -8,11 +8,10 @@
     <!--  -->
     <link rel="stylesheet" href="DigitalClock.css" />
     <!--  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/1bb28440d44596129c2c67bb9f94eae3?family=Bauhaus+Hv+BT" rel="stylesheet"
-        type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Paytone One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans Display">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--  -->
     <title>Digital Clock</title>
 </head>
@@ -28,7 +27,7 @@
                     <img src="assets/wake_up.svg" alt="sun">
                     <h2>set wake up time</h2>
                 </div>
-                <select name="wakeup-time" id="wakeup-time" onchange="setTimeTable()">
+                <select name="wakeup-time" id="wakeup-time">
                     <option value="8AM-9AM">8AM-9AM</option>
                     <option value="9AM-10AM">9AM-10AM</option>
                     <option value="10AM-11AM">10AM-11AM</option>
@@ -40,7 +39,7 @@
                     <img src="assets/lunch_time.svg" alt="sun">
                     <h2>set lunch time</h2>
                 </div>
-                <select name="lunch-time" id="lunch-time" onchange="setTimeTable()">
+                <select name="lunch-time" id="lunch-time">
                     <option value="12PM-1PM">12PM-1PM</option>
                     <option value="1PM-2PM">1PM-2PM</option>
                     <option value="2PM-3PM">2PM-3PM</option>
@@ -52,7 +51,7 @@
                     <img src="assets/nap_time.svg" alt="sun">
                     <h2>set Nap time</h2>
                 </div>
-                <select name="nap-time" id="nap-time" onchange="setTimeTable()">
+                <select name="nap-time" id="nap-time">
                     <option value="4PM-5PM">4PM-5PM</option>
                     <option value="5PM-6PM">5PM-6PM</option>
                     <option value="6PM-7PM">6PM-7PM</option>
@@ -64,7 +63,7 @@
                     <img src="assets/nap_time.svg" alt="sun">
                     <h2>set Night time</h2>
                 </div>
-                <select name="night-time" id="night-time" onchange="setTimeTable()">
+                <select name="night-time" id="night-time">
                     <option value="8PM-5AM">8PM-5AM</option>
                     <option value="9PM-6AM">9PM-6AM</option>
                     <option value="10PM-7AM">10PM-7AM</option>
@@ -78,10 +77,10 @@
         <div class="action">
             <button class="btn alarm" id="alarm">Set Alarm</button>
             <div class="time-table" id="time-table">
-                <small>Wake Up Time : 10AM - 11AM </small><br>
-                <small>Lunch Time : 12PM - 1PM</small><br>
-                <small>Nap Time : 4PM - 5PM</small><br>
-                <small>Night Time : 8PM - 5AM</small>
+                <small>Wake Up Time :Set time </small><br>
+                <small>Lunch Time : Set time</small><br>
+                <small>Nap Time : Set time</small><br>
+                <small>Night Time : Set time</small>
             </div>
         </div>
     </section>
