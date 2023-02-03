@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  -->
+    <link rel="stylesheet" href="DigitalClock.css" />
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/1bb28440d44596129c2c67bb9f94eae3?family=Bauhaus+Hv+BT" rel="stylesheet"
+        type="text/css" />
+    <!--  -->
+    <title>Digital Clock</title>
+</head>
+
+<body>
+    <section class="left-section">
+        <div class="logo">
+            <img src="assets/clock_logo.png" alt="clock logo">
+        </div>
+        <div class="schedule">
+            <div class="form-input">
+                <div class="period">
+                    <img src="assets/wake_up.svg" alt="sun">
+                    <h2>set wake up time</h2>
+                </div>
+                <select name="wakeup-time" id="">
+                    <option value="12-13">10AM - 11AM</option>
+                    <option value="12-13">11AM - 12AM</option>
+                    <option value="12-13">12AM - 1AM</option>
+                </select>
+            </div>
+            <div class="form-input">
+                <div class="period">
+                    <img src="assets/lunch_time.svg" alt="sun">
+                    <h2>set lunch time</h2>
+                </div>
+                <select name="lunch-time" id="">
+                    <option value="12-13">10AM - 11AM</option>
+                    <option value="12-13">11AM - 12AM</option>
+                    <option value="12-13">12AM - 1AM</option>
+                </select>
+            </div>
+            <div class="form-input">
+                <div class="period">
+                    <img src="assets/nap_time.svg" alt="sun">
+                    <h2>set Nap time</h2>
+                </div>
+                <select name="nap-time" id="">
+                    <option value="12-13">10AM - 11AM</option>
+                    <option value="12-13">11AM - 12AM</option>
+                    <option value="12-13">12AM - 1AM</option>
+                </select>
+            </div>
+            <div class="form-input">
+                <div class="period">
+                    <img src="assets/nap_time.svg" alt="sun">
+                    <h2>set Night time</h2>
+                </div>
+                <select name="night-time" id="">
+                    <option value="12-13">10AM - 11AM</option>
+                    <option value="12-13">11AM - 12AM</option>
+                    <option value="12-13">12AM - 1AM</option>
+                </select>
+            </div>
+        </div>
+        <div id="greeting">
+            <h2>Good Morning !!! Wake Up !!!</h2>
+        </div>
+        <div class="action">
+            <button class="btn alarm">Set Alarm</button>
+            <div class="time-table">
+                <small>wake up time 10am-11am</small><br>
+                <small>wake up time 10am-11am</small><br>
+                <small>wake up time 10am-11am</small><br>
+                <small>wake up time 10am-11am</small>
+            </div>
+        </div>
+    </section>
+    <section class="right-section">
+        <div class="actual-time">
+            <div>TIME</div>
+
+            <div>
+                <img src="assets/timeline.svg" alt="">
+                <div class="text">
+                    <h3 id="hour">12</h3>
+                    <p>hour</p>
+                </div>
+            </div>
+            <p>:</p>
+            <div>
+                <img src="assets/timeline.svg" alt="">
+                <div class="text">
+                    <h3 id="minute">12</h3>
+                    <p>mins</p>
+                </div>
+            </div>
+            <p>:</p>
+            <div>
+                <img src="assets/timeline.svg" alt="">
+                <div class="text">
+                    <h3 id="second">12</h3>
+                    <p>secs</p>
+                </div>
+            </div>
+            <div>
+                <img src="assets/AM_svg.svg" alt="">
+                <div class="text">
+                    <h2 id="am-pm">AM</h2>
+                </div>
+            </div>
+        </div>
+        <div class="queto">
+            <h3 id="queto-text">Grab Some Healthy BreakFast!!!</h3>
+        </div>
+        <div class="wallpaper" id="wallpaper">
+            <!-- <img id="wallpaper-img" src="assets/Group 5183-1.svg" alt="a wake up img"> -->
+        </div>
+    </section>
+</body>
+<script src="DigitalClock.js"></script>
+
+</html>
