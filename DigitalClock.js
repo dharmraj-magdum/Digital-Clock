@@ -50,7 +50,7 @@ function currentTime() {
 	am_pm.innerText = AMPM;
 
 	//now set queto and images according to time
-	if (hr >= WAKEUP[0] && hr < WAKEUP[1]) {
+	if (hr >= WAKEUP[0] && hr < WAKEUP[1] && am == true) {
 		// console.log(hr, "WAKEUP", WAKEUP, " am-", am, " pm-", pm);
 		greeting.innerText = "GOOD MORNING!! WAKE UP !!";
 		queto.innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
