@@ -16,7 +16,11 @@ const nap_time = document.getElementById("nap-time");
 const night_time = document.getElementById("night-time");
 const time_table = document.getElementById("time-table");
 //---
-let prevHour = null;
+let AMPM;
+var WAKEUP = [0, 0];
+var LUNCH = [0, 0];
+var NAP = [0, 0];
+var NIGHT = [0, 0];
 //---
 function currentTime() {
 	const now = new Date();
@@ -42,37 +46,32 @@ function currentTime() {
 	hour.innerText = hr;
 	minute.innerText = min;
 	second.innerText = sec;
-	am_pm.innerText = pm ? "PM" : "AM";
+	AMPM = pm ? "PM" : "AM";
+	am_pm.innerText = AMPM;
 
 	//now set queto and images according to time
-	if (hr != prevHour) {
-		if (hr >= 10 && hr < 12 && am == true) {
-			// console.log(hr, " am-", am, " pm-", pm);
-			greeting.innerText = "GOOD MORNING!! WAKE UP !!";
-			queto.innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
-			wallpaper.style.backgroundImage = "url('assets/Group_5183-1.svg')";
-		} else if (hr >= 1 && hr < 4 && pm == true) {
-			// console.log(hr, " am-", am, " pm-", pm);
-			greeting.innerText = "GOOD AFTERNOON !! TAKE SOME SLEEP";
-			queto.innerText = "LET'S HAVE SOME LUNCH !!";
-			wallpaper.style.backgroundImage = "url('assets/Group_5183.svg')";
-		} else if (hr >= 4 && hr < 5 && pm == true) {
-			// console.log(hr, " am-", am, " pm-", pm);
-			greeting.innerText = "GOOD EVENING !!";
-			queto.innerText = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
-			wallpaper.style.backgroundImage = "url('assets/lunch_image.png')";
-		} else if (hr >= 8 && pm == true) {
-			// console.log(hr, " am-", am, " pm-", pm);
-			greeting.innerText = "GOOD NIGHT !!";
-			queto.innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
-			wallpaper.style.backgroundImage =
-				"url('assets/goodnight_image.svg')";
-		} else {
-			// console.log(hr, " am-", am, " pm-", pm);
-		}
-	}
-	if (prevHour == null) {
-		prevHour = hr;
+	if (hr >= WAKEUP[0] && hr < WAKEUP[1]) {
+		// console.log(hr, "WAKEUP", WAKEUP, " am-", am, " pm-", pm);
+		greeting.innerText = "GOOD MORNING!! WAKE UP !!";
+		queto.innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
+		wallpaper.style.backgroundImage = "url('assets/Group_5183-1.svg')";
+	} else if (hr >= LUNCH[0] && hr < LUNCH[1] && pm == true) {
+		// console.log(hr, "LUNCH", LUNCH, " am-", am, " pm-", pm);
+		greeting.innerText = "GOOD AFTERNOON !! TAKE SOME SLEEP";
+		queto.innerText = "LET'S HAVE SOME LUNCH !!";
+		wallpaper.style.backgroundImage = "url('assets/Group_5183.svg')";
+	} else if (hr >= NAP[1] && hr < NAP[1] && pm == true) {
+		// console.log(hr, "NAP", NAP, " am-", am, " pm-", pm);
+		greeting.innerText = "GOOD EVENING !!";
+		queto.innerText = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
+		wallpaper.style.backgroundImage = "url('assets/lunch_image.png')";
+	} else if (hr >= NIGHT[0] && pm == true) {
+		// console.log(hr, "NIGHT", NIGHT, " am-", am, " pm-", pm);
+		greeting.innerText = "GOOD NIGHT !!";
+		queto.innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
+		wallpaper.style.backgroundImage = "url('assets/goodnight_image.svg')";
+	} else {
+		// console.log(hr, " am-", am, " pm-", pm);
 	}
 }
 
@@ -86,6 +85,29 @@ function setTimeTable() {
 	            <small>Lunch Time : ${lunchTime[0]}-${lunchTime[1]}</small><br>
 	            <small>Nap Time : ${napTime[0]}-${napTime[1]}</small><br>
 	            <small>Night Time : ${nightTime[0]}-${nightTime[1]}</small></div>`;
+
+	//get setted alars to change queto and image
+	WAKEUP[0] = getHourFromString(wakupTime[0]);
+	WAKEUP[1] = getHourFromString(wakupTime[1]);
+	LUNCH[0] = getHourFromString(lunchTime[0]);
+	LUNCH[1] = getHourFromString(lunchTime[1]);
+	NAP[0] = getHourFromString(napTime[0]);
+	NAP[1] = getHourFromString(napTime[1]);
+	NIGHT[0] = getHourFromString(nightTime[0]);
+	NIGHT[1] = getHourFromString(nightTime[1]);
+	// console.log(WAKEUP);
+	// console.log(LUNCH);
+	// console.log(NAP);
+	// console.log(NIGHT);
+	currentTime();
+}
+
+function getHourFromString(str) {
+	if (str.includes("AM")) {
+		return str.split("AM")[0];
+	} else {
+		return str.split("PM")[0];
+	}
 }
 
 //for initial render
